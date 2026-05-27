@@ -1550,33 +1550,7 @@ Opportunity to become a full-time employee
 ```text
 Major Windows BSOD issue hits banks, airlines, and TV broadcasters
 A faulty update from cybersecurity provider CrowdStrike is responsible for the global outage.
-by 
-Tom Warren
-
-
-
-
-
-Jul 19, 2024, 2:17 PM GMT+7
-
-
-
-272
-272
-Comments (All New)
-
-Image: Cath Virginia / The Verge
-Part Of
-CrowdStrike and Microsoft: all the latest news on the global IT outage
-see all updates
-
-
-Tom Warren
-
-
-
-
- is a senior correspondent and author of Notepad, who has been covering all things Microsoft, PC, and tech for over 20 years.
+by Tom Warren is a senior correspondent and author of Notepad, who has been covering all things Microsoft, PC, and tech for over 20 years.
 Thousands of Windows machines are experiencing a Blue Screen of Death (BSOD) issue at boot today, impacting banks, airlines, TV broadcasters, supermarkets, and many more businesses worldwide. A faulty update from cybersecurity provider CrowdStrike is knocking affected PCs and servers offline, forcing them into a recovery boot loop so machines can’t start properly. The issue is not being caused by Microsoft but by third-party CrowdStrike software that’s widely used by many businesses worldwide for managing the security of Windows PCs and servers.
 Australian banks, airlines, and TV broadcasters first raised the alarm as thousands of machines started to go offline. The issues spread fast as businesses based in Europe started their workday. UK broadcaster Sky News was unable to broadcast its morning news bulletins for hours this morning and was showing a message apologizing for “the interruption to this broadcast.” Ryanair, one of the biggest airlines in Europe, also says it’s experiencing a “third-party” IT issue, which is impacting flight departures.
 
@@ -1585,44 +1559,6 @@ Related
 CrowdStrike and Microsoft: all the latest news on the global IT outage
 Here’s how IT admins are fixing the Windows Blue Screen of Death chaos
 What is CrowdStrike, and what happened?
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-00:01
-
-
-02:00
-
-
-
-
-
-
-
-
-
-
-
-Read More
-
-
 
 The Federal Aviation Administration (FAA) says it’s assisting airlines like Delta, United, and American Airlines due to communications issues. “The FAA is closely monitoring a technical issue impacting IT systems at US airlines,” says FAA spokesperson Jeannie Shiffer in a statement to The Verge. “Several airlines have requested FAA assistance with ground stops for their fleets until the issue is resolved.”
 The Berlin airport is also warning of travel delays due to “technical issues.” Many 911 emergency call centers in Alaska have also been impacted by the issues. One airline in India has even turned to handwritten boarding passes due to the outages.
@@ -3972,9 +3908,139 @@ AI Bias/Hallucination Catch:
 
 ### [Req 3 - Prompt 1]
 
-- **Timestamp:** 20:00 28/05/2026
-- **Tool:** Claude 3.5 Sonnet
-- **Prompt:** > I am testing a Panasonic SR-MVN187 Rice Cooker. Generate 15 functional test cases for it. Structure them with Objective, Input, Steps, Expected Result, Actual Result, and Verdict.
+- **Timestamp:** 20:00 27/05/2026
+- **Tool:** Gemini 3.1 Pro
+- **Prompt:**
+
+```text
+hay cho toi mau .md cho phan requirement 3 nay
+```
 
 - **AI Output:**
-  > (Paste 15 test cases do AI sinh ra. Sau đó, trong file báo cáo PDF chính, bạn sẽ chỉ ra những edge cases nào AI đã bỏ sót).
+
+```text
+## Requirement 3: Test cases for ONE physical product (40 pts)
+
+**Tổng quan:**
+* **Thiết bị kiểm thử:** Máy lạnh (Air Conditioner)
+* **Tổng số Test Cases đã thiết kế:** 15 (Chi tiết xem trong file Excel đính kèm `[MãSV]_HW01_TestCases.xlsx`)
+* **Tổng số Lỗi (Defects) tìm thấy:** 5 (Đã log trên GitHub Issues)
+* **Tổng số Video thực thi:** 5 (YouTube Unlisted)
+
+---
+
+### 1. Thông tin thiết bị & Minh chứng (Device Information & Anti-cheat)
+
+* **Thiết bị (Device):** Máy lạnh treo tường
+* **Thương hiệu (Brand):** [Điền tên hãng, VD: Panasonic / Daikin / LG]
+* **Dòng máy (Model):** [Điền mã model, VD: CU/CS-PU9WKH-8M]
+* **Năm sản xuất/Mua (Year):** [VD: 2022]
+* **Số Seri (Serial Number):** `[Điền SN và che 4 số giữa, VD: 1982****3491]`
+
+**Ảnh minh chứng thiết bị (Kèm Thẻ sinh viên):**
+![Ảnh máy lạnh và Thẻ sinh viên](/images/device_and_student_id.jpg)
+*(Lưu ý: Chụp rõ thiết bị và thẻ sinh viên của bạn trong CÙNG 1 khung hình)*
+
+---
+
+### 2. Phân tích Edge Cases bị AI bỏ sót (AI Edge Cases Analysis - G9.3)
+
+Trong quá trình dùng AI (Claude 3.5 Sonnet / ChatGPT) để tạo 15 Test Cases, AI chủ yếu tập trung vào các chức năng cơ bản (Bật/tắt, tăng giảm nhiệt độ, chuyển mode). Dưới đây là **3 trường hợp kiểm thử biên (Edge Cases)** liên quan đến tương tác vật lý và môi trường mà AI đã hoàn toàn bỏ sót.
+
+**Minh chứng AI bỏ sót:**
+![Screenshot AI không tạo ra các Edge Cases này](/images/ai_missed_edge_cases.png)
+*(Chụp màn hình đoạn chat cho thấy AI chỉ đưa ra các case cơ bản, không có 3 case dưới đây)*
+
+**Chi tiết 3 Edge Cases do sinh viên tự bổ sung:**
+
+* **Edge Case 1: Rút phích cắm điện đột ngột khi đang chạy chế độ công suất tối đa (Turbo/Powerful).**
+  * *Lý do AI bỏ sót:* AI thường giả định nguồn điện luôn ổn định và chỉ test các luồng thao tác trên Remote. AI thiếu tư duy về "State Recovery" (phục hồi trạng thái) của phần cứng khi bị mất điện đột ngột ở môi trường thực tế.
+
+* **Edge Case 2: Nhấn giữ cùng lúc nhiều nút (hoặc bấm liên tục) trên Remote trong 5 giây.**
+  * *Lý do AI bỏ sót:* AI tuân theo luồng "Happy path" (nhấn từng nút một). Nó không mô phỏng được hành vi người dùng (đặc biệt là trẻ em) thao tác loạn xạ trên thiết bị phần cứng gây tràn bộ nhớ đệm (buffer) của vi mạch nhận tín hiệu.
+
+* **Edge Case 3: Thay đổi nhiệt độ đột ngột (từ 16°C sang 30°C) ngay khi máy nén (Block) vừa khởi động.**
+  * *Lý do AI bỏ sót:* Khác với phần mềm có thể thay đổi state lập tức, máy nén vật lý cần thời gian trễ (delay) để tránh quá tải. AI không hiểu được giới hạn cơ học vật lý này nên thường không sinh ra các test case ép xung phần cứng liên tục.
+
+---
+
+### 3. Báo cáo Lỗi (Defect Tracking - GitHub Issues)
+
+Trong quá trình thực thi kiểm thử trên thiết bị thực tế, tôi đã tìm ra 5 lỗi (defects/bugs) và tiến hành log lên hệ thống GitHub Issues.
+
+* **Link GitHub Repository:** [Dán link repo của bạn vào đây, VD: https://github.com/username/QAQC-HW01-AirConditioner]
+
+**Ảnh minh chứng GitHub Issues:**
+![GitHub Issues Log](/images/github_issues_bugs.png)
+*(Lưu ý: Ảnh chụp màn hình danh sách 5 bugs trên trang Issues, GÓC MÀN HÌNH PHẢI THẤY RÕ USERNAME GITHUB CỦA BẠN)*
+
+**Danh sách tóm tắt 5 Bugs:**
+1. [Bug 1: VD - Màn hình Remote bị mờ/mất nét khi nhìn nghiêng góc 45 độ]
+2. [Bug 2: VD - Cánh đảo gió (Swing) phát ra tiếng kêu cọt kẹt khi bật chế độ Quiet]
+3. [Bug 3: VD - Ứng dụng điều khiển qua Wi-Fi mất kết nối khi đổi sang mạng 5GHz]
+4. [Bug 4: VD - Nhấn nút Sleep nhưng đèn LED trên dàn lạnh không tắt hoàn toàn]
+5. [Bug 5: VD - Remote không gửi được tín hiệu nếu bị che khuất một phần mắt hồng ngoại]
+
+---
+
+### 4. Bằng chứng Thực thi (Test Execution Videos)
+
+Dưới đây là 5 video thực thi kiểm thử trực tiếp trên máy lạnh.
+*(Ghi chú: Tất cả video đều có giọng nói thuyết minh (voice narration) của sinh viên theo đúng yêu cầu Anti-cheat).*
+
+| ID | Tên Test Case (Test Scenario) | Link Video (YouTube Unlisted) |
+| :--- | :--- | :--- |
+| TC-01 | Kiểm tra tính năng hẹn giờ tắt máy (Timer Off) | `[Dán link YouTube, VD: https://youtu.be/abcd123]` |
+| TC-05 | Kiểm tra tính năng làm lạnh nhanh (Turbo/Powerful) | `[Dán link YouTube]` |
+| TC-08 | Kiểm tra hành vi của máy khi mất tín hiệu Remote (Che hồng ngoại) | `[Dán link YouTube]` |
+| TC-12 | Kiểm tra phục hồi trạng thái sau khi rút phích cắm đột ngột (Edge Case) | `[Dán link YouTube]` |
+| TC-15 | Kiểm tra phản hồi khi bấm loạn xạ các nút trên Remote (Edge Case) | `[Dán link YouTube]` |
+```
+
+### [Req 3 - Prompt 2]
+
+- **Timestamp:** 20:10 27/05/2026
+- **Tool:** Gemini 3.1 Pro
+- **Prompt:**
+
+```text
+ok, bây giờ hãy tạo cho tôi 15 test cases cho máy lạnh treo tường với đúng format (Objective / Input / Steps / Expected / Actual / Verdict) để tôi copy được vào file excel nhé. Các trường Actual và Verdict thì để trống.
+```
+
+- **AI Output:**
+
+```text
+Dưới đây là 15 Test Cases tiêu chuẩn dành cho máy lạnh (dập khuôn theo các chức năng cơ bản). Bảng này được thiết kế theo đúng định dạng bạn yêu cầu (chỉ dùng Markdown Table cơ bản để bạn bôi đen, copy và dán trực tiếp vào Excel rất dễ dàng).💡 Mẹo nhỏ cho bài tập: Để khớp với phần báo cáo Requirement 3 ở trên (chứng minh AI bỏ sót 3 Edge Cases), bạn hãy giữ lại 12 Test Cases đầu tiên trong bảng này, và thay thế 3 Test Cases cuối cùng (TC-13, TC-14, TC-15) bằng 3 Edge Cases mà bạn đã ghi trong file Markdown nhé. Như vậy file Excel nộp bài của bạn sẽ có tổng cộng đúng 15 Test Cases theo yêu cầu của GV!Bảng Test Cases Kiểm thử Máy Lạnh Treo TườngTest Case IDObjectiveInputStepsExpectedActualVerdictTC-01Kiểm tra chức năng Bật/Tắt máy.Nút Nguồn (Power/ON/OFF)1. Hướng remote về phía máy lạnh.2. Nhấn nút Power.Máy lạnh khởi động, cánh đảo gió mở ra, có tiếng "bíp" xác nhận và đèn tín hiệu trên dàn lạnh sáng.TC-02Kiểm tra chức năng tăng nhiệt độ.Nút Nhiệt độ (+ / Lên)1. Khi máy đang hoạt động, nhấn nút Temp (+).Nhiệt độ hiển thị trên màn hình remote và trên dàn lạnh tăng lên 1°C mỗi lần nhấn.TC-03Kiểm tra giới hạn nhiệt độ tối thiểu.Nút Nhiệt độ (- / Xuống)1. Nhấn nút Temp (-) liên tục cho đến khi đạt 16°C (hoặc mức thấp nhất của máy).2. Tiếp tục nhấn Temp (-).Khi đạt mức tối thiểu (VD: 16°C), nhiệt độ không giảm thêm, máy không phát ra tiếng bíp khi cố bấm vượt giới hạn.TC-04Kiểm tra chức năng thay đổi tốc độ quạt (Fan Speed).Nút Fan / Fan Speed1. Nhấn nút Fan liên tục để lặp qua các mức gió: Low, Medium, High, Auto.Tốc độ gió thổi ra từ dàn lạnh thay đổi rõ rệt tương ứng với mức hiển thị trên remote.TC-05Kiểm tra chức năng đảo gió dọc tự động (Vertical Swing).Nút Swing (Lên/Xuống)1. Nhấn nút Swing.2. Đợi 5 giây rồi nhấn lại nút Swing lần nữa.Cánh đảo gió bắt đầu di chuyển lên xuống đều đặn. Khi nhấn lần 2, cánh đảo gió dừng ngay tại vị trí hiện tại.TC-06Kiểm tra chức năng chuyển đổi chế độ hoạt động (Mode).Nút Mode1. Nhấn nút Mode lần lượt để chuyển qua: Cool (Làm lạnh), Dry (Hút ẩm), Fan (Chỉ quạt).Biểu tượng trên remote thay đổi tương ứng. Máy nén và quạt phản hồi đúng chức năng (VD: chế độ Fan thì dàn nóng không chạy).TC-07Kiểm tra tính năng làm lạnh cực đại (Turbo/Powerful).Nút Turbo / Powerful1. Đảm bảo máy đang ở chế độ Cool.2. Nhấn nút Turbo/Powerful.Quạt gió dàn lạnh tăng tốc lên mức tối đa, máy nén chạy hết công suất, biểu tượng Turbo sáng trên remote.TC-08Kiểm tra tính năng Chế độ ngủ (Sleep Mode).Nút Sleep / Baby1. Nhấn nút Sleep trước khi đi ngủ.Máy chuyển sang hoạt động với độ ồn thấp nhất (quạt quay chậm), đèn LED trên dàn lạnh tự động tối đi hoặc tắt để không chói mắt.TC-09Kiểm tra chức năng Hẹn giờ tắt máy (Timer Off).Nút Timer1. Nhấn Timer và thiết lập thời gian tắt sau 30 phút.2. Theo dõi sau 30 phút.Đèn báo Timer trên máy sáng lên. Đúng 30 phút sau, máy tự động tắt hoàn toàn.TC-10Kiểm tra khoảng cách nhận tín hiệu tối đa của Remote.Tín hiệu hồng ngoại1. Đứng cách dàn lạnh khoảng 7-8 mét (không có vật cản).2. Nhấn nút tăng/giảm nhiệt độ.Dàn lạnh vẫn nhận được tín hiệu, phát ra tiếng "bíp" và phản hồi lệnh bình thường.TC-11Kiểm tra góc nhận tín hiệu của Remote.Tín hiệu hồng ngoại1. Đứng ở góc chéo khoảng 45 độ so với dàn lạnh.2. Hướng remote về phía máy và nhấn nút.Máy vẫn nhận được tín hiệu và phản hồi lệnh một cách trơn tru.TC-12Kiểm tra nút khởi động khẩn cấp trên dàn lạnh.Nút cứng (Emergency/Auto)1. Mở nắp mặt trước của dàn lạnh.2. Nhấn nút cứng Emergency bằng tay (không dùng remote).Máy lạnh khởi động ở chế độ Auto mặc định (thường là 24°C) bình thường.TC-13Kiểm tra phản hồi âm thanh của thiết bị.Lệnh bất kỳ1. Nhấn ngẫu nhiên nhiều lệnh hợp lệ khác nhau trên remote.Loa trên dàn lạnh phát ra âm thanh "bíp" rõ ràng, không bị rè hay mất tiếng ở bất kỳ lệnh nào.TC-14Kiểm tra hiển thị màn hình LED trên dàn lạnh.Nút Display/Light (nếu có)1. Bật máy, quan sát thông số nhiệt độ hiển thị trên vỏ máy.2. Nhấn nút tắt đèn LED (nếu remote có hỗ trợ).LED hiển thị rõ ràng, không bị đứt nét (chết pixel). LED tắt hoàn toàn khi nhận lệnh tắt đèn.TC-15Kiểm tra hành vi khi Remote bị tháo pin / hết pin.Pin (Battery)1. Tháo nắp và lấy pin ra khỏi remote.2. Chờ 10 giây và lắp pin lại.
+```
+
+### [Req 3 - Prompt 3]
+
+- **Timestamp:** 20:00 27/05/2026
+- **Tool:** Gemini 3.1 Pro
+- **Prompt:**
+
+```text
+
+```
+
+- **AI Output:**
+
+```text
+
+```
+
+### [Req 3 - Prompt 4]
+
+- **Timestamp:** 20:00 27/05/2026
+- **Tool:** Gemini 3.1 Pro
+- **Prompt:**
+
+```text
+
+```
+
+- **AI Output:**
+
+```text
+
+```
