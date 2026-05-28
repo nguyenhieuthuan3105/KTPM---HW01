@@ -4044,3 +4044,21 @@ Dưới đây là 15 Test Cases tiêu chuẩn dành cho máy lạnh (dập khuô
 ```text
 
 ```
+
+---
+
+## AI Collaboration Protocol
+
+### [Prompt 1]
+
+- **Timestamp:** 9:00 28/05/2026
+- **Tool:** Gemini 3.1 Pro
+- **Prompt:**
+
+```text
+draws a QA/QC role mindmap. Do it for me as a part of my hw
+```
+
+- **AI Output:**
+
+![QA-QC Roles Mindmap](/images/qa_qc_roles_mindmap.png)

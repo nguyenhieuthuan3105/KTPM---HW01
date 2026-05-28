@@ -3,7 +3,7 @@
 **Tổng quan:**
 
 - **Thiết bị kiểm thử:** Máy lạnh (Air Conditioner)
-- **Tổng số Test Cases đã thiết kế:** 15 (Chi tiết xem trong file Excel đính kèm `[MãSV]_HW01_TestCases.xlsx`)
+- **Tổng số Test Cases đã thiết kế:** 15 (Chi tiết xem trong file Excel đính kèm `23127125_HW01_testcase.xlsx`)
 - **Tổng số Lỗi (Defects) tìm thấy:** 5 (Đã log trên GitHub Issues)
 - **Tổng số Video thực thi:** 5 (YouTube Unlisted)
 
@@ -24,7 +24,7 @@
 
 ### 2. Phân tích Edge Cases bị AI bỏ sót (AI Edge Cases Analysis)
 
-Trong quá trình dùng AI (Claude 3.5 Sonnet / ChatGPT) để tạo 15 Test Cases, AI chủ yếu tập trung vào các chức năng cơ bản (Bật/tắt, tăng giảm nhiệt độ, chuyển mode). Dưới đây là **3 trường hợp kiểm thử biên (Edge Cases)** liên quan đến tương tác vật lý và môi trường mà AI đã hoàn toàn bỏ sót.
+Trong quá trình dùng AI (Gemini 3.1 Pro) để tạo 15 Test Cases, AI chủ yếu tập trung vào các chức năng cơ bản (Bật/tắt, tăng giảm nhiệt độ, chuyển mode). Dưới đây là **3 trường hợp kiểm thử biên (Edge Cases)** liên quan đến tương tác vật lý và môi trường mà AI đã hoàn toàn bỏ sót.
 
 **Minh chứng AI bỏ sót:**
 ![Screenshot AI không tạo ra các Edge Cases này](/images/ai_missed_1.png)
@@ -48,33 +48,31 @@ Trong quá trình dùng AI (Claude 3.5 Sonnet / ChatGPT) để tạo 15 Test Cas
 
 Trong quá trình thực thi kiểm thử trên thiết bị thực tế, tôi đã tìm ra 5 lỗi (defects/bugs) và tiến hành log lên hệ thống GitHub Issues.
 
-- **Link GitHub Repository:** [Dán link repo của bạn vào đây, VD: https://github.com/username/QAQC-HW01-AirConditioner]
+- **Link GitHub Repository:** [https://github.com/nguyenhieuthuan3105/KTPM---HW01]
 
 **Ảnh minh chứng GitHub Issues:**
 ![GitHub Issues Log](/images/github_issues_bugs.png)
-_(Lưu ý: Ảnh chụp màn hình danh sách 5 bugs trên trang Issues, GÓC MÀN HÌNH PHẢI THẤY RÕ USERNAME GITHUB CỦA BẠN)_
 
 **Danh sách tóm tắt 5 Bugs:**
 
-1. [Bug 1: VD - Màn hình Remote bị mờ/mất nét khi nhìn nghiêng góc 45 độ]
-2. [Bug 2: VD - Cánh đảo gió (Swing) phát ra tiếng kêu cọt kẹt khi bật chế độ Quiet]
-3. [Bug 3: VD - Ứng dụng điều khiển qua Wi-Fi mất kết nối khi đổi sang mạng 5GHz]
-4. [Bug 4: VD - Nhấn nút Sleep nhưng đèn LED trên dàn lạnh không tắt hoàn toàn]
-5. [Bug 5: VD - Remote không gửi được tín hiệu nếu bị che khuất một phần mắt hồng ngoại]
+1. [Bug 1] Cánh đảo gió không dừng đúng vị trí khi tắt chế độ Swing
+2. [Bug 2] Đèn LED dàn lạnh không thay đổi độ sáng ở chế độ Sleep
+3. [Bug 3] Nút khởi động khẩn cấp trên dàn lạnh bị hỏng/chập
+4. [Bug 4] Dàn lạnh bị mất tiếng phản hồi khi nhận nhiều lệnh liên tục
+5. [Bug 5] Remote không tự khởi động lại sau khi tháo lắp pin
 
 ---
 
 ### 4. Bằng chứng Thực thi (Test Execution Videos)
 
 Dưới đây là 5 video thực thi kiểm thử trực tiếp trên máy lạnh.
-_(Ghi chú: Tất cả video đều có giọng nói thuyết minh (voice narration) của sinh viên theo đúng yêu cầu Anti-cheat)._
 
-| ID    | Tên Test Case (Test Scenario)                                           | Link Video (YouTube Unlisted)                      |
-| :---- | :---------------------------------------------------------------------- | :------------------------------------------------- |
-| TC-01 | Kiểm tra tính năng hẹn giờ tắt máy (Timer Off)                          | `[Dán link YouTube, VD: https://youtu.be/abcd123]` |
-| TC-05 | Kiểm tra tính năng làm lạnh nhanh (Turbo/Powerful)                      | `[Dán link YouTube]`                               |
-| TC-08 | Kiểm tra hành vi của máy khi mất tín hiệu Remote (Che hồng ngoại)       | `[Dán link YouTube]`                               |
-| TC-12 | Kiểm tra phục hồi trạng thái sau khi rút phích cắm đột ngột (Edge Case) | `[Dán link YouTube]`                               |
-| TC-15 | Kiểm tra phản hồi khi bấm loạn xạ các nút trên Remote (Edge Case)       | `[Dán link YouTube]`                               |
+| ID    | Tên Test Case (Test Scenario)                                                                    | Link Video (YouTube Unlisted)  |
+| :---- | :----------------------------------------------------------------------------------------------- | :----------------------------- |
+| TC-01 | Kiểm tra chức năng Bật/Tắt máy.                                                                  | `https://youtu.be/2DEcMKyzdnM` |
+| TC-05 | Kiểm tra chức năng đảo gió dọc tự động (Vertical Swing).                                         | `https://youtu.be/CRRbu3IVWtc` |
+| TC-07 | Kiểm tra giới hạn biên nhiệt độ tối đa của hệ thống.                                             | `https://youtu.be/k1L9MJYPACQ` |
+| TC-09 | Kiểm tra tính năng tự động phục hồi trạng thái (Auto-Restart) khi mất điện đột ngột.             | `https://youtu.be/h464pbFygWU` |
+| TC-15 | Kiểm tra hành vi hệ thống khi có sự bất đồng bộ lệnh giữa Remote và Dàn lạnh trong lúc mất điện. | `https://youtu.be/1guEl35hmCs` |
 
 ---
