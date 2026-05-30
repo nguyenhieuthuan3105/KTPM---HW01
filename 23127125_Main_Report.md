@@ -18,11 +18,11 @@ Dưới đây là sơ đồ tư duy (Mindmap) về quy trình kiểm thử ISTQB
 - **Lý do:** Người đưa ra, thiết lập và định nghĩa các yêu cầu ở đầu dự án là Khách hàng, Product Owner (PO) hoặc Business Analyst (BA), chứ không phải QA. QA chỉ tham gia review xem tài liệu yêu cầu đó có tuân thủ đúng quy chuẩn form mẫu hay không.
 - **Sửa lại:** Thay thế "QA sets requirements at start" thành "BA/PO sets requirements at start, QA audits the requirement process".
 
-### Lỗi 3: Nhầm lẫn vai trò định nghĩa Yêu cầu
+### Lỗi 3: Sai quy trình chuẩn bị dữ liệu
 
-- **Vị trí:** Nhánh OVERLAP & COLLABORATION -> SDLC INTEGRATION -> QA sets requirements at start
-- **Lý do:** Người đưa ra, thiết lập và định nghĩa các yêu cầu ở đầu dự án là Khách hàng, Product Owner (PO) hoặc Business Analyst (BA), chứ không phải QA. QA chỉ tham gia review xem tài liệu yêu cầu đó có tuân thủ đúng quy chuẩn form mẫu hay không.
-- **Sửa lại:** Thay thế "QA sets requirements at start" thành "BA/PO sets requirements at start, QA audits the requirement process".
+- **Vị trí:** Nhánh OVERLAP & COLLABORATION -> DATA SHARING -> QA provides test data to QC
+- **Lý do:** Việc chuẩn bị dữ liệu kiểm thử là một phần của giai đoạn Test Implementation do chính các Tester/QC thực hiện. QA làm quy trình, không có trách nhiệm hay chuyên môn đi tạo data cho QC test.
+- **Sửa lại:** Đổi thành "QC prepares test data during Test Implementation phase".
 
 ---
 
